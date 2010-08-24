@@ -41,6 +41,7 @@ namespace :release do
 		zip.output_file = package_file
 		zip.output_path = File.dirname(__FILE__)
 		
+		
 		`gem build #{project}.gemspec`
 	end
 	
