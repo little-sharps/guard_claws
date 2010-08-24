@@ -33,13 +33,15 @@ namespace :release do
 	  msb.solution = "#{project}.sln"
 	end
 	
-	desc "Package release image"
+	desc "Package release images"
 	zip :package => :build do |zip|
 		die_from_lack_of_tag unless tag_name 
 		zip.directories_to_zip "#{project}/bin/Release/"
 		zip.additional_files = "README.markdown"
 		zip.output_file = package_file
 		zip.output_path = File.dirname(__FILE__)
+		
+		`gem build #{project}.gemspec`
 	end
 	
 	desc "Tag repository"
@@ -66,7 +68,7 @@ namespace :release do
 			:description => "Release #{tag_name}"
 		)
 	end
-	
+		
 	desc "Do all release tasks"
 	task :all => [:tag, :upload] do
 	
