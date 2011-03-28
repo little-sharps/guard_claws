@@ -1,5 +1,6 @@
 using GuardClaws.Exceptions;
 using NUnit.Framework;
+using SharpTestsEx;
 
 
 public abstract class expect_a_ComparisonViolation_exception<TExpectedExceptionType, TVariableType> :

@@ -1,14 +1,14 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guard_claws", "guard_claws\guard_claws.csproj", "{5F79EB42-6FB9-42C1-AF66-C50EA977D00C}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "specs", "specs\specs.csproj", "{B3F42A16-048F-4401-856A-00899A381F23}"
-EndProject
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{56EAEE33-A0FD-4625-BC4A-FEBCB9888A9B}"
 	ProjectSection(SolutionItems) = preProject
 		RakeFile = RakeFile
 	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "guard_claws", "guard_claws\guard_claws.csproj", "{5F79EB42-6FB9-42C1-AF66-C50EA977D00C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "specs", "specs\specs.csproj", "{B3F42A16-048F-4401-856A-00899A381F23}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "playground", "playground\playground.csproj", "{27FA154A-4389-4729-B7AE-D44722397C5C}"
 EndProject

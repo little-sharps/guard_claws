@@ -1,5 +1,6 @@
 using GuardClaws.Exceptions;
 using NUnit.Framework;
+using SharpTestsEx;
 
 
 public abstract class expect_an_exception<TExpectedExceptionType, TVariableType> where TExpectedExceptionType : GuardClauseViolationException<TVariableType>

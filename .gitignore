@@ -13,3 +13,4 @@ obj/
 *.suo
 guard_claws-*.zip
 guard_claws.sln.cache
+!/packages/*/lib/*.dll
