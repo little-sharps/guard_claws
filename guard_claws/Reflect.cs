@@ -21,11 +21,8 @@ namespace GuardClaws
     /// <remarks>This class is not supported by Silverlight 2.0</remarks>
     internal static class Reflect
     {
-        static readonly byte Ldarg_0 = (byte) OpCodes.Ldarg_0.Value;
-        static readonly byte Ldfld = (byte) OpCodes.Ldfld.Value;
-        static readonly byte Stloc_0 = (byte) OpCodes.Stloc_0.Value;
-        static readonly byte Ret = (byte) OpCodes.Ret.Value;
-
+        static readonly byte Ldarg_0 = (byte)OpCodes.Ldarg_0.Value;
+        static readonly byte Ldfld = (byte)OpCodes.Ldfld.Value;
 
         public static string VariableName<T>(Func<T> expression)
         {
@@ -46,9 +43,8 @@ namespace GuardClaws
         {
             var method = expression.Method;
             var il = method.GetMethodBody().GetILAsByteArray();
-            // in DEBUG we end up with stack
-            // in release, there is a ret at the end
-            if ((il[0] == Ldarg_0) && (il[1] == Ldfld) && ((il[6] == Stloc_0) || (il[6] == Ret)))
+
+            if ((il[0] == Ldarg_0) && (il[1] == Ldfld))
             {
                 var fieldHandle = BitConverter.ToInt32(il, 2);
 
@@ -60,8 +56,7 @@ namespace GuardClaws
                     return module.ResolveField(fieldHandle);
                 }
                 var genericTypeArguments = expressionType.GetGenericArguments();
-                // method does not have any generics
-                //var genericMethodArguments = method.GetGenericArguments();
+
                 return module.ResolveField(fieldHandle, genericTypeArguments, Type.EmptyTypes);
             }
             throw new ArgumentException("Expected simple field reference");
