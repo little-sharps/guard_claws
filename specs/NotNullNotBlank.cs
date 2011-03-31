@@ -1,22 +1,22 @@
+using GuardClaws;
 using GuardClaws.Exceptions;
 using NUnit.Framework;
-using GuardClaws;
 
 namespace NotNullNotBlank
 {
-	[TestFixture]
+    [TestFixture]
     public class when_called_with_a_valid_input
     {
-		[Test]
-        public void it_should_do_nothing () 
+        [Test]
+        public void it_should_do_nothing()
         {
             var test = "valid value";
-            Claws.NotNullNotBlank(()=>test);
+            Claws.NotNullNotBlank(() => test);
         }
     }
 
     [TestFixture]
-    public class when_called_with_a_null : expect_an_exception<VariableMustNotBeNullException<string>,string>
+    public class when_called_with_a_null : expect_a_guard_clause_violation_exception<VariableMustNotBeNullException<string>, string>
     {
         protected override void StatementUnderTest()
         {
@@ -26,7 +26,7 @@ namespace NotNullNotBlank
     }
 
     [TestFixture]
-    public class when_called_with_a_blank : expect_an_exception<VariableMustNotBeBlankException,string>
+    public class when_called_with_a_blank : expect_a_guard_clause_violation_exception<VariableMustNotBeBlankException, string>
     {
         protected override void StatementUnderTest()
         {
@@ -34,4 +34,4 @@ namespace NotNullNotBlank
             Claws.NotNullNotBlank(() => test);
         }
     }
-}    
+}

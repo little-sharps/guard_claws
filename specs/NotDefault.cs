@@ -8,7 +8,8 @@ namespace NotDefault
     [TestFixture]
     public class when_called_with_a_not_default_value
     {
-        [Test] public void 
+        [Test]
+        public void
             it_should_do_nothing()
         {
             var test = "asdf";
@@ -17,17 +18,17 @@ namespace NotDefault
     }
 
     [TestFixture]
-    public class when_called_with_a_default_value_int : expect_an_exception<VariableMustNotBeDefaultValueException<int>,int>
+    public class when_called_with_a_default_value_int : expect_a_guard_clause_violation_exception<VariableMustNotBeDefaultValueException<int>, int>
     {
         protected override void StatementUnderTest()
         {
             test = default(int);
-            Claws.NotDefault(()=>test);
+            Claws.NotDefault(() => test);
         }
     }
 
     [TestFixture]
-    public class when_called_with_a_default_value_string : expect_an_exception<VariableMustNotBeDefaultValueException<string>, string>
+    public class when_called_with_a_default_value_string : expect_a_guard_clause_violation_exception<VariableMustNotBeDefaultValueException<string>, string>
     {
         protected override void StatementUnderTest()
         {
@@ -37,11 +38,12 @@ namespace NotDefault
     }
 
     [TestFixture]
-    public class when_called_with_a_default_value_guid : expect_an_exception<VariableMustNotBeDefaultValueException<Guid>,Guid>
+    public class when_called_with_a_default_value_guid : expect_a_guard_clause_violation_exception<VariableMustNotBeDefaultValueException<Guid>, Guid>
     {
-        protected override void StatementUnderTest() {
+        protected override void StatementUnderTest()
+        {
             test = default(Guid);
-            Claws.NotDefault(()=> test);
+            Claws.NotDefault(() => test);
         }
     }
 }

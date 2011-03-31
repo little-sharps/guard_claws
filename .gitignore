@@ -2,6 +2,7 @@
 *.usertasks
 *.sou
 *.user
+*.ReSharper
 _ReSharper.*/
 *.userprefs
 *.pidb
