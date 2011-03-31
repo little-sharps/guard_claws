@@ -76,6 +76,7 @@
   <ItemGroup>
     <Compile Include="AtLeast.cs" />
     <Compile Include="expect_a_ComparisonViolation_exception.cs" />
+    <Compile Include="GreaterThan.cs" />
     <Compile Include="NotDefault.cs" />
     <Compile Include="NotEqual.cs" />
     <Compile Include="NotNull.cs" />
