@@ -3,6 +3,8 @@
 *.sou
 *.user
 _ReSharper.*/
+*.ReSharper
+*.nupkg
 *.userprefs
 *.pidb
 **/test-results/**
