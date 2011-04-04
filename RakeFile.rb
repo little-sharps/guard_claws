@@ -35,7 +35,7 @@ namespace :release do
 	task :package => :build do 
 		die_from_lack_of_tag unless tag_name
 		
-		`NuGet.exe pack guard_claws.nuspec Version=#{tag_name}`
+		`NuGet.exe pack guard_claws.nuspec -Version #{tag_name}`
 	end
 
     desc "Update Version"
