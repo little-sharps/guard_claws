@@ -2,7 +2,7 @@
 <package>
   <metadata>
     <id>guard_claws</id>
-    <version>0.0.5</version>
+    <version>0.0.0</version>
     <authors>Brendan Erwin</authors>
     <description>'DRY Guard Clauses for c#. Guard_claws provides DRY guard clauses for c# that look like this: Claws.NotNullNotBlank(() => test);</description>
     <language>en-US</language>

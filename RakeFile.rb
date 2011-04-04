@@ -17,7 +17,7 @@ end
 
 namespace :release do
 	desc "Build release binaries."
-	task :build => [:build_35, :build_40]
+	task :build => [:assemblyinfo, :build_35, :build_40]
 	
 	msbuild :build_40 do |msb|
 	  msb.properties :configuration => :Release40
@@ -35,14 +35,24 @@ namespace :release do
 	task :package => :build do 
 		die_from_lack_of_tag unless tag_name
 		
-		`NuGet.exe pack guard_claws.nuspec`
+		`NuGet.exe pack guard_claws.nuspec Version=#{tag_name}`
 	end
+
+    desc "Update Version"
+    assemblyinfo :assemblyinfo do |asm|
+        die_from_lack_of_tag unless tag_name 
+        asm.output_file = "guard_claws/Properties/AssemblyInfo.cs"
+        asm.version = "#{tag_name}"
+        asm.file_version = asm.version
+        asm.title = project
+        asm.com_visible = false
+        asm.copyright = "Copyright (c) Brendan Erwin (and contributors) 2011"
+    end
 	
 	desc "Tag repository"
-	task :tag do 
+	task :tag => :assemblyinfo do 
 		die_from_lack_of_tag unless tag_name 
-		File.open('VERSION', 'w') {|f| f.write(tag_name) }
-		`git commit VERSION -m"Update version to #{tag_name}."`
+		`git commit guard_claws/Properties/AssemblyInfo.cs -m"Update version to #{tag_name}."`
 		`git tag "#{tag_name}"`
 		`git push origin "#{tag_name}"`
 	end
