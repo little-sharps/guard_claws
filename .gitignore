@@ -4,6 +4,8 @@
 *.user
 *.ReSharper
 _ReSharper.*/
+*.ReSharper
+*.nupkg
 *.userprefs
 *.pidb
 **/test-results/**

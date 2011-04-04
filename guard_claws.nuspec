@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<package>
+  <metadata>
+    <id>guard_claws</id>
+    <version>0.0.0</version>
+    <authors>Brendan Erwin</authors>
+    <description>'DRY Guard Clauses for c#. Guard_claws provides DRY guard clauses for c# that look like this: Claws.NotNullNotBlank(() => test);</description>
+    <language>en-US</language>
+    <projectUrl>https://github.com/littlebits/guard_claws</projectUrl>
+    <licenseUrl>https://github.com/littlebits/guard_claws</licenseUrl>
+	<tags>guard clause</tags>
+  </metadata>
+  <files>
+    <file src=".\guard_claws\bin\Release40\*.dll" target="lib\Net40" />
+	<file src=".\guard_claws\bin\Release40\*.xml" target="lib\Net40" />
+	<file src=".\guard_claws\bin\Release35\*.dll" target="lib\Net35" />
+	<file src=".\guard_claws\bin\Release35\*.xml" target="lib\Net35" />
+  </files>
+</package>
