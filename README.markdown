@@ -1,6 +1,8 @@
 guard_claws ![Project status](http://stillmaintained.com/littlebits/guard_claws.png)
 =========
 
+Install via [NuGet](http://www.nuget.org/List/Packages/guard_claws).
+
 A DRY guard clause library designed to provide simple, readable guard clauses. Inspired by this [question on StackOverflow]( http://stackoverflow.com/questions/669678/what-is-the-smoothest-most-appealing-syntax-youve-found-for-asserting-parameter/670495).
 
 Example
@@ -26,7 +28,7 @@ guard_claws uses code from the [Lokad Shared Libraries](http://abdullin.com/jour
 
 License
 ===========
-Copyright (c) 2009, Brendan Erwin and contributors.
+Copyright (c) 2011, Brendan Erwin and contributors.
 All rights reserved.
  
 Redistribution and use in source and binary forms, with or without
