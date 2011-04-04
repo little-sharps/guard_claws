@@ -6,6 +6,11 @@ namespace GuardClaws
 {
     public static class Claws
     {
+        public static CallThrough<T> Ensure<T>(Func<T> variable)
+        {
+            return new CallThrough<T>(variable);
+        }
+
         public static void NotNull<T>(Func<T> variable) where T : class
         {
             if (variable.Invoke() != null) return;
@@ -81,6 +86,25 @@ namespace GuardClaws
             if (val.CompareTo(comparedTo) == 1) return;
 
             throw new VariableMustBeGreaterThanException<T>(variable, comparedTo);
+        }
+    }
+
+
+    public class CallThrough<T>
+    {
+        private readonly Func<T> variable;
+
+        public CallThrough(Func<T> variable)
+        {
+            this.variable = variable;
+        }
+
+        public void Passes(Predicate<T> predicate)
+        {
+            if (!predicate(variable.Invoke()))
+            {
+                throw new VariableMustPassProvidedPredicateException<T>(variable);
+            }
         }
     }
 }

@@ -4,7 +4,7 @@ using SharpTestsEx;
 
 
 public abstract class expect_a_ComparisonViolation_exception<TExpectedExceptionType, TVariableType> :
-    expect_an_exception<TExpectedExceptionType, TVariableType>
+    expect_a_guard_clause_violation_exception<TExpectedExceptionType, TVariableType>
     where TExpectedExceptionType : GuardClauseComparisonViolationException<TVariableType>
 {
     protected TVariableType compareTo;

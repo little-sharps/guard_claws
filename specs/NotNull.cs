@@ -1,6 +1,6 @@
+using GuardClaws;
 using GuardClaws.Exceptions;
 using NUnit.Framework;
-using GuardClaws;
 
 namespace NotNull
 {
@@ -17,7 +17,7 @@ namespace NotNull
     }
 
     [TestFixture]
-    public class when_called_with_a_null : expect_an_exception<VariableMustNotBeNullException<string>, string>
+    public class when_called_with_a_null : expect_a_guard_clause_violation_exception<VariableMustNotBeNullException<string>, string>
     {
         protected override void StatementUnderTest()
         {
@@ -27,11 +27,12 @@ namespace NotNull
     }
 
     [TestFixture]
-    public class when_called_with_a_null_nullable_type : expect_an_exception<VariableMustNotBeNullException<decimal?>,decimal?>
+    public class when_called_with_a_null_nullable_type : expect_a_guard_clause_violation_exception<VariableMustNotBeNullException<decimal?>, decimal?>
     {
-        protected override void StatementUnderTest() {
+        protected override void StatementUnderTest()
+        {
             test = null;
-            Claws.NotNull(()=>test);
+            Claws.NotNull(() => test);
         }
     }
 
@@ -39,7 +40,8 @@ namespace NotNull
     public class when_called_with_a_not_null_nullable_type
     {
         [Test]
-        public void It_should_do_nothing() {
+        public void It_should_do_nothing()
+        {
             decimal? test = 123.5M;
             Claws.NotNull(() => test);
         }

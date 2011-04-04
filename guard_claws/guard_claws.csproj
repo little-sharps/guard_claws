@@ -72,6 +72,7 @@
     <Compile Include="Exceptions\VariableMustNotBeDefaultValueException.cs" />
     <Compile Include="Exceptions\VariableMustNotBeEmptyException.cs" />
     <Compile Include="Exceptions\VariableMustNotBeEqualException.cs" />
+    <Compile Include="Exceptions\VariableMustPassProvidedPredicateException.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Reflect.cs" />
     <Compile Include="Exceptions\GuardClauseViolationException.cs" />

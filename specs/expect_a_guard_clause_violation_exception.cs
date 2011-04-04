@@ -3,7 +3,7 @@ using NUnit.Framework;
 using SharpTestsEx;
 
 
-public abstract class expect_an_exception<TExpectedExceptionType, TVariableType> where TExpectedExceptionType : GuardClauseViolationException<TVariableType>
+public abstract class expect_a_guard_clause_violation_exception<TExpectedExceptionType, TVariableType> where TExpectedExceptionType : GuardClauseViolationException<TVariableType>
 {
     protected TExpectedExceptionType the_exception;
 

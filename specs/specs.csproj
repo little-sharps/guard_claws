@@ -83,8 +83,9 @@
     <Compile Include="NotNullNotBlank.cs" />
     <Compile Include="NotNullNotEmpty.cs" />
     <Compile Include="Numeric.cs" />
+    <Compile Include="Passes.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="expect_an_exception.cs" />
+    <Compile Include="expect_a_guard_clause_violation_exception.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
